@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--  MAPEO EN SOLITARIO FUNCIONA (SIN LAS RELACIONES) -->
+<class name="datos.TipoLimpieza" table="TipoLimpieza">
+<id column="idTipoLimpieza" name="idTipoLimpieza">
+<generator class="identity"/>
+</id>
+<property column="descripcion" name="descripcion" type="String"/>
+
+
+
+
+
+<!--  
+      <one-to-one class="datos.ticketLimpieza" name="TicketLimpieza" />			
+
+--> 
+
+
+
+</class>
+</hibernate-mapping>
+
+

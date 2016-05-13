@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="datos.TicketConsumo">
+<id column="idTicketConsumo" name="idTicketConsumo">
+<generator class="identity"></generator>
+</id>
+
+<property name="descripcion" column="descripcion" type="string"></property>
+<property name="precio" column="precio" type="float"></property>
+<property name="fecha" column="fecha" type="Gregorian calendar"></property>
+
+<!--<many-to-one class="datos.Estadia" name="estadia">
+-->
+
+</class>
+</hibernate-mapping>
+
+
