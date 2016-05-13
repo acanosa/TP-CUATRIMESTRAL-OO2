@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="datos.Recibo">
+<id name="idRecibo" column="idRecibo">
+<generator class="identity"></generator>
+</id>
+	
+<property name="fecha" column="fecha" type="calendar"></property>
+<property name="importe" column="importe" type="float"></property>
+<property name="formaPago" column="formaPago" type="string"></property>
+
+<many-to-one name="factura" class="datos.Factura">
+<column name="idFactura" not-null="true"></column>
+</many-to-one>
+
+
+</class>
+</hibernate-mapping>

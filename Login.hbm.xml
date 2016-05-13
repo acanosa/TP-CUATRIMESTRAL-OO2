@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="datos.Login" table="Login">
+<id name="idLogin" column="idLogin">
+<generator class="identity"></generator>
+</id>
+
+<property column="usuario" name="usuario" type="string"></property>
+<property column="clave" name="clave" type="string"></property>
+<property column="privilegio" name="privilegio" type="int"></property>
+
+<one-to-one class="datos.Cliente" name="cliente"></one-to-one>
+<one-to-one class="datos.Usuario" name="datosUsuario"></one-to-one>
+<one-to-one class="datos.TicketMantenimiento" name="ticketMantenimiento"></one-to-one>
+<one-to-one class="datos.TicketLimpieza" name="ticketLimpieza"></one-to-one>
+
+
+</class>
+</hibernate-mapping>

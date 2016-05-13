@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="datos.Promocion" table="Promocion">
+<id name="idPromocion" column="idPromocion">
+<generator class="identity"></generator>
+</id>
+
+<property column="fechaInicio" name="fechaInicio" type="calendar"></property>
+<property column="fechaFin" name="fechaFin" type="calendar"></property>
+<property column="descuento" name="descuento" type="float"></property>
+
+<set name="estadias" table="Estadia" order-by="idEstadia asc" inverse="true" lazy="true" fetch="select">
+<key column="idEstadia" not-null="true"></key>
+<one-to-many class="datos.Estadia" />
+</set>
+
+
+</class>
+</hibernate-mapping>
