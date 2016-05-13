@@ -2,17 +2,19 @@ package datos;
 
 import java.util.GregorianCalendar;
 
+import funciones.Funciones;
+
 public class Recibo {
 	
 	private long idRecibo;
 	private GregorianCalendar fecha;
-	private double importe;
+	private float importe;
 	private String formaPago;
 	private Factura factura;
 	
 	public Recibo(){}
 
-	public Recibo(GregorianCalendar fecha, double importe, String formaPago) {
+	public Recibo(GregorianCalendar fecha, float importe, String formaPago) {
 		super();
 		this.fecha = fecha;
 		this.importe = importe;
@@ -35,11 +37,11 @@ public class Recibo {
 		this.fecha = fecha;
 	}
 
-	public double getImporte() {
+	public float getImporte() {
 		return importe;
 	}
 
-	public void setImporte(double importe) {
+	public void setImporte(float importe) {
 		this.importe = importe;
 	}
 
@@ -58,5 +60,13 @@ public class Recibo {
 	public void setFactura(Factura factura) {
 		this.factura = factura;
 	}
+
+	@Override
+	public String toString() {
+		return "idRecibo=" + idRecibo + ", fecha=" + Funciones.obtenerFechaCorta(fecha) + ", importe=" + importe + ", formaPago=" + formaPago
+				+ ", factura=" + factura  + "\n";
+	}
+	
+	
 	
 }

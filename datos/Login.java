@@ -84,6 +84,14 @@ public class Login {
 	public void setTicketMantenimiento(TicketMantenimiento ticketMantenimiento) {
 		this.ticketMantenimiento = ticketMantenimiento;
 	}
+
+	@Override
+	public String toString() {
+		return "idLogin=" + idLogin + ", usuario=" + usuario + ", clave=" + clave + ", privilegio=" + privilegio
+				+ ", datosUsuario=" + datosUsuario + ", cliente=" + cliente + ", ticketLimpieza=" + ticketLimpieza
+				+ ", ticketMantenimiento=" + ticketMantenimiento + "\n";
+	}
+	
 	
 	
 	

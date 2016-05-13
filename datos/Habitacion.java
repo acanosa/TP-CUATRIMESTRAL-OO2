@@ -82,7 +82,7 @@ public class Habitacion {
 	public String toString() {
 		return "idHabitacion=" + idHabitacion + ", capacidadMaxima=" + capacidadMaxima + ", disponible="
 				+ disponible + ", precioNoche=" + precioNoche + ", precioTemporada=" + precioTemporada
-				+ ", lstEstadias=" + lstEstadias + ", tipoHabitacion=" + tipoHabitacion;
+				+ ", lstEstadias=" + lstEstadias + ", tipoHabitacion=" + tipoHabitacion + "\n";
 	}
 	
 	

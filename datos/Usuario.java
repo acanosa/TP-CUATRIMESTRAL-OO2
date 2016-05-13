@@ -13,7 +13,7 @@ public class Usuario {
 	
 	public Usuario(){}
 
-	public Usuario(String nombre, String apellido, int dni, String usuario, String clave) {
+	public Usuario(String nombre, String apellido, boolean baja, int dni, String usuario, String clave) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -100,7 +100,7 @@ public class Usuario {
 	public String toString() {
 		return "idUsuario=" + idUsuario + ", nombre=" + nombre
 				+ ", apellido=" + apellido + ", dni=" + dni + ", usuario="
-				+ usuario;
+				+ usuario  + "\n";
 	}
 	
 	

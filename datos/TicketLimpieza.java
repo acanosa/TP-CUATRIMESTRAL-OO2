@@ -2,6 +2,8 @@ package datos;
 
 import java.util.GregorianCalendar;
 
+import funciones.Funciones;
+
 public class TicketLimpieza {
 	
 	private long idTicketLimpieza;
@@ -57,6 +59,13 @@ public class TicketLimpieza {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
+
+	@Override
+	public String toString() {
+		return "idTicketLimpieza=" + idTicketLimpieza + ", realizado=" + realizado +
+				", fecha=" + Funciones.obtenerFechaCorta(fecha)	+ ", login=" + login + ", tipoLimpieza=" + tipoLimpieza + "\n";
+	}
+	
 	
 	
 	

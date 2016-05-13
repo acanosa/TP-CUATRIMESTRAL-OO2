@@ -2,6 +2,8 @@ package datos;
 
 import java.util.GregorianCalendar;
 
+import funciones.Funciones;
+
 public class TicketMantenimiento {
 	private long idTicketMantenimiento;
 	private GregorianCalendar fechaGeneracion;
@@ -33,24 +35,8 @@ public class TicketMantenimiento {
 		return idTicketMantenimiento;
 	}
 
-	protected void setIdTicketMantenimiento(long idTicketMantenimiento) {
+	public void setIdTicketMantenimiento(long idTicketMantenimiento) {
 		this.idTicketMantenimiento = idTicketMantenimiento;
-	}
-
-	public String getLugar() {
-		return lugar;
-	}
-
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
-
-	public GregorianCalendar getFechaFinalizacion() {
-		return fechaFinalizacion;
-	}
-
-	public void setFechaFinalizacion(GregorianCalendar fechaFinalizacion) {
-		this.fechaFinalizacion = fechaFinalizacion;
 	}
 
 	public GregorianCalendar getFechaGeneracion() {
@@ -59,6 +45,14 @@ public class TicketMantenimiento {
 
 	public void setFechaGeneracion(GregorianCalendar fechaGeneracion) {
 		this.fechaGeneracion = fechaGeneracion;
+	}
+
+	public String getLugar() {
+		return lugar;
+	}
+
+	public void setLugar(String lugar) {
+		this.lugar = lugar;
 	}
 
 	public String getProblema() {
@@ -93,12 +87,28 @@ public class TicketMantenimiento {
 		this.fechaInicio = fechaInicio;
 	}
 
+	public GregorianCalendar getFechaFinalizacion() {
+		return fechaFinalizacion;
+	}
+
+	public void setFechaFinalizacion(GregorianCalendar fechaFinalizacion) {
+		this.fechaFinalizacion = fechaFinalizacion;
+	}
+
 	public Login getLogin() {
 		return login;
 	}
 
 	public void setLogin(Login login) {
 		this.login = login;
+	}
+
+	@Override
+	public String toString() {
+		return "idTicketMantenimiento=" + idTicketMantenimiento + ", fechaGeneracion="
+				+ Funciones.obtenerFechaCorta(fechaGeneracion) + ", lugar=" + lugar + ", problema=" + problema + ", observacion=" + observacion
+				+ ", reparado=" + reparado + ", fechaInicio=" + Funciones.obtenerFechaCorta(fechaInicio) + ", fechaFinalizacion=" + Funciones.obtenerFechaCorta(fechaFinalizacion)
+				+ ", login=" + login  + "\n";
 	}
 	
 	

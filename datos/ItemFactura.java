@@ -55,5 +55,13 @@ public class ItemFactura {
 	public void setFactura(Factura factura) {
 		this.factura = factura;
 	}
+
+	@Override
+	public String toString() {
+		return "idItemFactura=" + idItemFactura + ", detalle=" + detalle + ", importe=" + importe
+				+ ", cantidad=" + cantidad + ", factura=" + factura + "\n";
+	}
+	
+	
 	
 }

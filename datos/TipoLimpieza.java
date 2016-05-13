@@ -36,6 +36,12 @@ public class TipoLimpieza {
 	public void setTicketLimpieza(TicketLimpieza ticketLimpieza) {
 		this.ticketLimpieza = ticketLimpieza;
 	}
+
+	@Override
+	public String toString() {
+		return "idTipoLimpieza=" + idTipoLimpieza + ", descripcion=" + descripcion + ", ticketLimpieza="
+				+ ticketLimpieza + "\n";
+	}
 	
 	
 	

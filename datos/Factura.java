@@ -1,6 +1,9 @@
 package datos;
 
 import java.util.GregorianCalendar;
+import java.util.Set;
+
+import funciones.Funciones;
 
 public class Factura {
 	private long idFactura;
@@ -8,8 +11,8 @@ public class Factura {
 	private float total;
 	private boolean pagado;
 	private Estadia estadia;
-	private ItemFactura itemFactura;
-	private Recibo recibo;
+	private Set<ItemFactura> itemFactura;
+	private Set<Recibo> recibos;
 		
 	public Factura(){}
 
@@ -61,21 +64,29 @@ public class Factura {
 		this.estadia = estadia;
 	}
 
-	public ItemFactura getItemFactura() {
+	public Set<ItemFactura> getItemFactura() {
 		return itemFactura;
 	}
 
-	public void setItemFactura(ItemFactura itemFactura) {
+	public void setItemFactura(Set<ItemFactura> itemFactura) {
 		this.itemFactura = itemFactura;
 	}
 
-	public Recibo getRecibo() {
-		return recibo;
+	public Set<Recibo> getRecibos() {
+		return recibos;
 	}
 
-	public void setRecibo(Recibo recibo) {
-		this.recibo = recibo;
+	public void setRecibos(Set<Recibo> recibo) {
+		this.recibos = recibo;
 	}
+
+	@Override
+	public String toString() {
+		return "idFactura=" + idFactura + ", fecha=" + Funciones.obtenerFechaCorta(fecha) + ", total=" + total + ", pagado=" + pagado
+				+ ", estadia=" + estadia + ", itemFactura=" + itemFactura + ", recibos=" + recibos + "\n";
+	}
+	
+	
 
 	
 	

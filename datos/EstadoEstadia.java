@@ -12,12 +12,13 @@ public class EstadoEstadia {
 		this.descripcion = descripcion;
 	}
 
-	public long getIdEstadoEstadia() {
-		return idEstadoEstadia;
+	
+	public void setIdEstadoEstadia(long idEstadoEstadia) {
+		this.idEstadoEstadia = idEstadoEstadia;
 	}
 
-	protected void setEstadoIdEstadia(long idEstadia) {
-		this.idEstadoEstadia = idEstadia;
+	public long getIdEstadoEstadia() {
+		return idEstadoEstadia;
 	}
 
 	public String getDescripcion() {
@@ -35,6 +36,14 @@ public class EstadoEstadia {
 	public void setEstadia(Estadia estadia) {
 		this.estadia = estadia;
 	}
+
+	@Override
+	public String toString() {
+		return "idEstadoEstadia=" + idEstadoEstadia + ", descripcion=" + descripcion + ", estadia="
+				+ estadia + "\n";
+	}
+	
+	
 	
 	
 	

@@ -57,6 +57,13 @@ public class TipoHabitacion {
 		this.habitacion = habitacion;
 	}
 
+	@Override
+	public String toString() {
+		return "idTipoHabitacion=" + idTipoHabitacion + ", descripcion=" + descripcion
+				+ ", precioTemporadaAlta=" + precioTemporadaAlta + ", precioTemporadaBaja=" + precioTemporadaBaja
+				+ ", habitacion=" + habitacion + "\n";
+	}
+
 	
 	
 	

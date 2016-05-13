@@ -80,9 +80,9 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre
+		return "idCliente=" + idCliente + ", nombre=" + nombre
 				+ ", apellido=" + apellido + ", dni=" + dni + ", borrado="
-				+ borrado + ", estadias=" + estadias + "]";
+				+ borrado + ", estadias=" + estadias + "\n";
 	}
 
 	

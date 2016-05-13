@@ -129,7 +129,7 @@ public class Estadia {
 				+ ", cliente=" + cliente + ", estado=" + estado
 				+ ", promocion=" + promocion + ", habitaciones=" + habitaciones
 				+ ", ticketsConsumo=" + ticketsConsumo + ", facturas="
-				+ facturas ;
+				+ facturas + "\n" ;
 	}
 	
 	

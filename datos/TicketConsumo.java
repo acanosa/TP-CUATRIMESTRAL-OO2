@@ -2,6 +2,8 @@ package datos;
 
 import java.util.GregorianCalendar;
 
+import funciones.Funciones;
+
 public class TicketConsumo {
 	
 	private long idTicketConsumo;
@@ -57,6 +59,12 @@ public class TicketConsumo {
 
 	public void setEstadia(Estadia estadia) {
 		this.estadia = estadia;
+	}
+
+	@Override
+	public String toString() {
+		return "idTicketConsumo=" + idTicketConsumo + ", descripcion=" + descripcion + ", precio="
+				+ precio + ", fecha=" + Funciones.obtenerFechaCorta(fecha) + ", estadia=" + estadia + "\n";
 	}
 	
 	

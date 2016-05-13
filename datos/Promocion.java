@@ -2,17 +2,19 @@ package datos;
 
 import java.util.GregorianCalendar;
 
+import funciones.Funciones;
+
 public class Promocion {
 	private long idPromocion;
 	private GregorianCalendar fechaInicio;
 	private GregorianCalendar fechaFin;
-	private double descuento;
+	private float descuento;
 	private Estadia estadia;
 	
 	public Promocion(){}
 
 	public Promocion(GregorianCalendar fechaInicio, GregorianCalendar fechaFin,
-			double descuento) {
+			float descuento) {
 		super();
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
@@ -43,11 +45,11 @@ public class Promocion {
 		this.fechaFin = fechaFin;
 	}
 
-	public double getDescuento() {
+	public float getDescuento() {
 		return descuento;
 	}
 
-	public void setDescuento(double descuento) {
+	public void setDescuento(float descuento) {
 		this.descuento = descuento;
 	}
 
@@ -58,6 +60,13 @@ public class Promocion {
 	public void setEstadia(Estadia estadia) {
 		this.estadia = estadia;
 	}
+
+	@Override
+	public String toString() {
+		return "idPromocion=" + idPromocion + ", fechaInicio=" + Funciones.obtenerFechaCorta(fechaInicio) + 
+				", fechaFin=" + Funciones.obtenerFechaCorta(fechaFin) + ", descuento=" + descuento + ", estadia=" + estadia  + "\n";
+	}
+	
 	
 	
 	
