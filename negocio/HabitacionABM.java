@@ -16,8 +16,8 @@ public class HabitacionABM {
 		return h;
 	}
 	
-	public List<Habitacion> traerHabitacion()throws Exception{
-		return dao.traerHabitacion();
+	public List<Habitacion> traerHabitaciones()throws Exception{
+		return dao.traerHabitaciones();
 	}
 	public void modificar(Habitacion h)throws Exception{
 		if(h==null) throw new Exception("ERROR: objeto nulo");

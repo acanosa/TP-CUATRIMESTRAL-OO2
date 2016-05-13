@@ -10,7 +10,7 @@ import dao.PromocionDao;
 public class PromocionABM {
 	PromocionDao dao= new PromocionDao();
 	
-	public long agregarPromocion(GregorianCalendar fechaInicio, GregorianCalendar fechaFin, double descuento)
+	public long agregarPromocion(GregorianCalendar fechaInicio, GregorianCalendar fechaFin, float descuento)
 	{
 		Promocion p=new Promocion(fechaInicio,fechaFin,descuento);
 		return dao.agregarPromocion(p);

@@ -11,6 +11,7 @@ public class TicketMantenimientoABM {
 TicketMantenimientoDao dao=new TicketMantenimientoDao();
 	
 	public long agregarTicketMantenimiento(GregorianCalendar fechaGeneracion, String lugar, String problema, String observacion, boolean reparado, GregorianCalendar fechaInicio, GregorianCalendar fechaFin)
+	throws Exception
 	{
 		TicketMantenimiento t= new TicketMantenimiento(fechaGeneracion, lugar, problema, observacion,reparado, fechaInicio, fechaFin);
 		return dao.agregarTicketMantenimiento(t);

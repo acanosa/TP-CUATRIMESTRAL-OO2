@@ -7,29 +7,33 @@ public class UsuarioABM {
 	
 	UsuarioDao dao= new UsuarioDao();
 	
-	public Usuario traerUsuario(long idUsuario)throws Exception{
+	public Usuario traerUsuario(long idUsuario){
 		Usuario u= dao.traerUsuario(idUsuario);
-		if(u==null) throw new Exception("ERROR: No se encuentra el Usuario con id "+idUsuario);
 		return u;
 	}
 	
-	public Usuario traerUsuario(String usuario) throws Exception{
+	public Usuario traerUsuario(String usuario,String clave){ //validar Login
 		
-		Usuario u=dao.traerUsuario(usuario);
-		if(u==null) throw new Exception ("ERROR: No se encuentra el Usuario con nombre= " +usuario);
+		Usuario u=dao.traerUsuario(usuario, clave);
 		return u;	
 	}
 	
-	public long agregar(String apellido, String nombre, int dni,String usuario, String clave)throws Exception{
-		Usuario u=new Usuario(nombre, apellido,dni,usuario,clave);
+	public Usuario traerUsuario(String usuario){//modificar usuario
+		
+		Usuario u=dao.traerUsuario(usuario);
+		return u;	
+	}
+	
+	public long agregarUsuario(String nombre, String apellido, boolean baja, int dni,String usuario, String clave)throws Exception{
+		Usuario u=new Usuario(nombre, apellido,baja,dni,usuario,clave);
 		return dao.agregarUsuario(u);
 	}
 	
-	public long agregar(Usuario u)throws Exception{
+	public long agregarUsuario(Usuario u)throws Exception{
 		return dao.agregarUsuario(u);
 	}
 	
-	public void modificar(Usuario u)throws Exception{
+	public void modificarUsuario(Usuario u)throws Exception{
 		if(u==null) throw new Exception ("ERROR: objeto nulo");
 		if(dao.traerUsuario(u.getIdUsuario()) == null) throw new Exception ("ERROR: usuario no registrado");
 		dao.actualizarUsuario(u);
@@ -42,7 +46,7 @@ public class UsuarioABM {
 		dao.actualizarUsuario(u);
 	}
 	
-	public  void eliminar(long idUsuario)throws Exception{
+	public  void eliminarUsuario(long idUsuario)throws Exception{
 		Usuario u=dao.traerUsuario(idUsuario);
 		if(u==null) throw new Exception("ERROR: No se encuentra el Usuario con id "+idUsuario);
 		dao.eliminarUsuario(u);

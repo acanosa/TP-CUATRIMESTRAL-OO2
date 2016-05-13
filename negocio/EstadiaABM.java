@@ -1,5 +1,6 @@
 package negocio;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -21,13 +22,13 @@ public class EstadiaABM {
 		if(e==null) throw new Exception("ERROR: No se encuentra la estadia con ese id "+idEstadia);// implementar si c es null lanzar Exception
 		return e;
 }
-	public long agregar(GregorianCalendar fechaCheckIn, GregorianCalendar fechaCheckOut, GregorianCalendar fechaPedido,boolean facturado)throws Exception{
+	public long agregarEstadia(GregorianCalendar fechaCheckIn, GregorianCalendar fechaCheckOut, GregorianCalendar fechaPedido,boolean facturado)throws Exception{
 		Estadia e=new Estadia(fechaCheckIn,  fechaCheckOut, fechaPedido, facturado);
 		
 		return dao.agregarEstadia(e);
 	}
 	
-	public long agregar(Estadia e)throws Exception
+	public long agregarEstadia(Estadia e)throws Exception
 	{
 		if(e==null) throw new Exception ("ERROR: objeto nulo");
 		return dao.agregarEstadia(e);
@@ -51,9 +52,20 @@ public class EstadiaABM {
 		dao.actualizarEstadia(estadia);
 	}
 	
+	public void modificarEstadia(Estadia estadia)
+	{
+		dao.actualizarEstadia(estadia);
+	}
+	
 	public void cancelarEstadia(Estadia estadia) throws Exception
 	{
-		eliminarEstadia(estadia);
+		GregorianCalendar fecha=new GregorianCalendar();
+		GregorianCalendar fechaCheckOut= estadia.getFechaCheckOut();
+		if(fechaCheckOut.compareTo(fecha)>0){
+			estadia.setFechaCheckOut(new GregorianCalendar());
+			dao.actualizarEstadia(estadia);
+		}else
+			throw new Exception("ERROR: la estadia ya ha terminado, no se puede cancelar");
 	}
 	
 	public List<Estadia> traerEstadias()
