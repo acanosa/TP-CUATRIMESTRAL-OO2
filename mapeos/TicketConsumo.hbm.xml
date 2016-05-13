@@ -9,10 +9,11 @@
 
 <property name="descripcion" column="descripcion" type="string"></property>
 <property name="precio" column="precio" type="float"></property>
-<property name="fecha" column="fecha" type="Gregorian calendar"></property>
+<property name="fecha" column="fechaDePago" type="calendar"></property>
 
-<!--<many-to-one class="datos.Estadia" name="estadia">
--->
+<many-to-one class="datos.Estadia" name="estadia">
+<column name="idEstadia" not-null="true" ></column>
+</many-to-one>
 
 </class>
 </hibernate-mapping>

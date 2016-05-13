@@ -2,10 +2,24 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<class class="datos.Factura" table="Factura">
-<id>
-
+<class name="datos.Factura" table="Factura">
+<id name="idFactura" column="idFactura">
+<generator class="identity"></generator>
 </id>
 
+<property name="fecha" column="fecha" type="calendar"></property>
+<property name="total" column="total" type="float"></property>
+<property name="pagado" column="pagado" type="boolean"></property>
+
+<set name="itemFactura" cascade="save-update" inverse="true" order-by= "idItemFactura asc" lazy="true" fetch="select">
+<key column="idFactura" not-null="true"></key>
+<one-to-many class="datos.ItemFactura" ></one-to-many>
+</set>
+
+<set name="recibo"  cascade="save-update" inverse="true" order-by="idRecibo asc" lazy="true" fetch="select">
+<key column="idFactura" not-null="true"></key>
+<one-to-many class="datos.Recibo"></one-to-many>
+</set>
 
 </class>
+</hibernate-mapping>

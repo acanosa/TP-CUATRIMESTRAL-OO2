@@ -2,14 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!-- MAPEO EN SOLITARIO: -->
 <class name="datos.Recibo">
-<id name="idCliente" column="idCliente">
+<id name="idRecibo" column="idRecibo">
 <generator class="identity"></generator>
 </id>
 	
-<property name="fecha" column="fecha" type="Calendar"></property>
-<property name="importe" column="importe" type="double"></property>
+<property name="fecha" column="fecha" type="calendar"></property>
+<property name="importe" column="importe" type="float"></property>
 <property name="formaPago" column="formaPago" type="string"></property>
 
 <many-to-one name="factura" class="datos.Factura">
@@ -18,3 +17,4 @@
 
 
 </class>
+</hibernate-mapping>

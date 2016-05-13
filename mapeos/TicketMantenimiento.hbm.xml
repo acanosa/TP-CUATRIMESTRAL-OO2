@@ -2,25 +2,24 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!--  MAPEO EN SOLITARIO FUNCIONA (SIN LAS RELACIONES) -->
+
 <class name="datos.TicketMantenimiento" table="TicketMantenimiento">
 <id column="idTicketMantenimiento" name="idTicketMantenimiento">
 <generator class="identity"/>
 </id>
-<property column="realizado" name="realizado" type="boolean"/>
-<property column="fechaGeneracion" name="fechaGeneracion" type="GregorianCalendar"/>
-<property column="lugar" name="lugar" type="String"/>
-<property column="problema" name="problema" type="String"/>
-<property column="observacion" name="observacion" type="String"/>
+<property column="fechaGeneracion" name="fechaGeneracion" type="calendar"/>
+<property column="lugar" name="lugar" type="string"/>
+<property column="problema" name="problema" type="string"/>
+<property column="observacion" name="observacion" type="string"/>
 <property column="reparado" name="reparado" type="boolean"/>
-<property column="fechaInicio" name="fechaInicio" type="GregorianCalendar"/>
-<property column="fechaFinalizacion" name="fechaFinalizacion" type="GregorianCalendar"/>
+<property column="fechaInicio" name="fechaInicio" type="calendar"/>
+<property column="fechaFinalizacion" name="fechaFinalizacion" type="calendar"/>
 
 
 
-<!--  <one-to-one class="datos.login" name="Login" /> 
+ <one-to-one class="datos.Login" name="Login" /> 
       		
---> 
+
 
 
 

@@ -2,23 +2,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!--  MAPEO EN SOLITARIO FUNCIONA (SIN LAS RELACIONES) -->
-<class name="datos.TicketLimpieza" table="TicketLimpieza">
-<id column="idTicketLimpieza" name="idTicketLimpieza">
+<class name="datos.TipoLimpieza" table="TipoLimpieza">
+<id column="idTipoLimpieza" name="idTipoLimpieza">
 <generator class="identity"/>
 </id>
-<property column="realizado" name="realizado" type="boolean"/>
-<property column="fecha" name="fecha" type="GregorianCalendar"/>
 
 
+<property column="descripcion" name="descripcion" type="string"></property>
 
-
-<!--  <one-to-one class="datos.login" name="Login" /> 
-      <one-to-one class="datos.tipoLimpieza" name="TipoLimpieza" />			
-
---> 
-
-
+<one-to-one class="datos.TicketLimpieza" name="ticketLimpieza"></one-to-one>	
 
 </class>
 </hibernate-mapping>

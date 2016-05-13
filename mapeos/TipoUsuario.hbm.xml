@@ -2,23 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!--  MAPEO EN SOLITARIO FUNCIONA (SIN LAS RELACIONES) -->
 <class name="datos.TipoUsuario" table="TipoUsuario">
 <id column="idTipoUsuario" name="idTipoUsuario">
 <generator class="identity"/>
 </id>
-<property column="tipo" name="tipo" type="String"/>
+<property column="tipo" name="tipo" type="string"/>
 
 
-
-
-
-<!--  
-      <one-to-one class="datos.tipoUsuario" name="TipoUsuario" />			
-
---> 
-
-
+<one-to-one class="datos.Usuario" name="usuario" />	
 
 </class>
 </hibernate-mapping>

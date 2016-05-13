@@ -2,17 +2,20 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<class name="datos.ItemFactura">
-<id column="idItemFactura" name="idItemfactura">
+<class name="datos.ItemFactura" table="ItemFactura">
+<id column="idItemFactura" name="idItemFactura">
 <generator class="identity"></generator>
 </id>
 
+ 
 <property name="detalle" column="detalle" type="string"></property>
 <property name="importe" column="importe" type="float"></property>
 <property name="cantidad" column="cantidad" type="int"></property>
 
 <many-to-one class="datos.Factura" name="factura">
-<column name="idFactura" not-null="true"></column>
+	<column name="idFactura" not-null="true"></column>
 </many-to-one>
 
+
 </class>
+</hibernate-mapping>

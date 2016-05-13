@@ -2,35 +2,41 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!--  MAPEO EN SOLITARIO: FUNCIONA (SIN RELACIONES) -->
 <class name="datos.Estadia" table="Estadia">
-<id name="idEstadia" column="idEstadia">
-<generator class="identity"></generator>
-</id>
 
-<property name="fechaCheckIn" column="fechaCheckIn" type="calendar"></property>
-<property name="fechaCheckOut" column="fechaCheckOut" type="calendar"></property>
-<property name="fechaPedido" column="fechaPedido" type="calendar"></property>
-<property name="facturado" column="facturado" type="boolean"></property>
+	<id name="idEstadia" column="idEstadia">
+	<generator class="identity"></generator>
+	</id>
+	
+	<property name="fechaCheckIn" column="fechaCheckIn" type="calendar"></property>
+	<property name="fechaCheckOut" column="fechaCheckOut" type="calendar"></property>
+	<property name="fechaPedido" column="fechaPedido" type="calendar"></property>
+	<property name="facturado" column="facturado" type="boolean"></property>
 
-<!--  <one-to-many class="datos.Cliente"></one-to-many>
-<one-to-many class="datos.Promocion"></one-to-many>
-<one-to-many class="datos.EstadoEstadia"></one-to-many>
+	<many-to-one class="datos.Cliente" name="cliente">
+	<column name="idCliente" not-null="true"></column>
+	</many-to-one>
 
-<set name="habitaciones" class="datos.Habitacion" order by="idHabitacion asc" inverse="true" lazy="true" fetch="select">
-<key column="idHabitacion" not-null="true"/>
-<many-to-many class="datos.Habitacion"></many-to-many>
-</set>
+	<many-to-one class="datos.Promocion" name="promocion">
+		<column name="idPromocion" not-null="true"></column>
+	</many-to-one>
+	
+	<one-to-one class="datos.EstadoEstadia" name="estado"></one-to-one>
 
-<set name="ticketsConsumo" class="datos.TicketConsumo" order by="idTicketConsumo asc" inverse="true" lazy="true" fetch="select">
-<key column="idTicketConsumo" not-null="true"></key>
-<one-to-many class="datos.TicketConsumo"/>
-</set>
-
-<set name="facturas" class="datos.Factura" order by="idFactura asc" inverse="true" lazy="true" fetch="select">
-<key column="idFactura" not-null="true"></key>
-<one-to-many class="datos.Factura"/>
-</set>-->
+	<set name="habitaciones"  order-by="idHabitacion asc" inverse="true" lazy="true" fetch="select">
+	<key column="idHabitacion" not-null="true"/>
+	<many-to-many class="datos.Habitacion"></many-to-many>
+	</set>
+	
+	<set name="ticketsConsumo"  order-by="idTicketConsumo asc" inverse="true" lazy="true" fetch="select">
+	<key column="idTicketConsumo" not-null="true"></key>
+	<one-to-many class="datos.TicketConsumo"/>
+	</set>
+	
+	<set name="facturas" order-by="idFactura asc" inverse="true" lazy="true" fetch="select">
+	<key column="idFactura" not-null="true"></key>
+	<one-to-many class="datos.Factura"/>
+	</set>
 
 </class>
 </hibernate-mapping>
