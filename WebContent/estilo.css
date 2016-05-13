@@ -1,0 +1,55 @@
+@CHARSET "ISO-8859-1";
+.div-centrado{
+	text-align: center;
+}
+
+#div1{
+	text-decoration: underline;
+	font-size: 30px;
+}
+
+.div-Izquierda{
+	text-align: left;
+	
+}
+
+h1{
+	font-size: small;
+}
+
+#div2{
+	text-decoration: underline;
+	text-decoration: bold;
+	font-size: 18px;
+}
+
+.div-Campos{
+	width: 200px;
+	
+}
+
+.div-texto label{
+	font-size: 20px;
+	
+}
+
+.div-textoIzquierda{
+	width: 15px;
+	height: 15px;
+}
+
+.div-textoMedio{
+	
+}
+.div-textoDerecha{
+	
+}
+
+#barra1{
+	value: "usuario";
+}
+
+#barra2{
+	width: 185px;
+}
+}
