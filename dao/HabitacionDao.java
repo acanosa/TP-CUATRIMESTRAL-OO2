@@ -63,7 +63,7 @@ public class HabitacionDao {
 		
 	
 			@SuppressWarnings("unchecked")
-				public List<Habitacion> traerHabitacion() throws HibernateException {
+				public List<Habitacion> traerHabitaciones() throws HibernateException {
 				List<Habitacion> lista=null;
 					try {
 						iniciaOperacion();

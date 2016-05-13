@@ -24,22 +24,6 @@ public class TipoUsuarioDao {
 		throw new HibernateException("ERROR en la capa de acceso de datos", he);
 	}
 	
-	public long agregarTipoUsuario(TipoUsuario objeto)
-	{
-		long id=0;
-		try{
-			iniciaOperacion();
-			id= Long.parseLong(session.save(objeto).toString());
-			tx.commit();
-		}catch (HibernateException he){
-			manejaExcepcion(he);
-			throw he;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
 	public TipoUsuario traerTipoUsuario(long idTipoUsuario) throws HibernateException
 	{
 		TipoUsuario objeto=null;
@@ -55,37 +39,6 @@ public class TipoUsuarioDao {
 			session.close();
 		}
 		return objeto;	
-	}
-	
-	public void actualizarTipoUsuario(TipoUsuario objeto) throws HibernateException
-	{
-		try{
-			iniciaOperacion();
-			session.update(objeto);
-			tx.commit();
-		}catch(HibernateException he)
-		{
-			manejaExcepcion(he);
-			throw he;
-		}finally
-		{
-			session.close();
-		}
-	}
-	
-	public void eliminarTipoUsuario(TipoUsuario objeto) throws HibernateException
-	{
-		try{
-			iniciaOperacion();
-			session.delete(objeto);
-			tx.commit();
-		}catch(HibernateException he){
-			manejaExcepcion(he);
-			throw he;
-		}finally
-		{
-			session.close();
-		}
 	}
 	
 	@SuppressWarnings("unchecked")

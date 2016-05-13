@@ -91,7 +91,7 @@ import datos.Cliente;
 					List<Cliente> lista=null;
 						try {
 							iniciaOperacion();
-							lista=session.createQuery("from Cliente c order by c.apellido asc c.nombre asc").list();
+							lista=session.createQuery("from Cliente c order by idCliente asc").list();
 						} finally {
 							session.close();
 						}

@@ -1,10 +1,14 @@
 package dao;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Factura;
+import datos.ItemFactura;
+import datos.Recibo;
+import java.util.List;
 
 public class FacturaDao {
 	
@@ -70,5 +74,27 @@ public class FacturaDao {
 			session.close();
 		}
 	}
+	
+	public Factura traerListasFactura(long idFactura){
+		
+		Factura f=null;
+		
+		try{
+			iniciaOperacion();
+			String hql= "from Factura f where f.idFactura= "+idFactura;
+			f= (Factura) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize((f.getRecibos()));
+			Hibernate.initialize(f.getItemFactura());
+		}catch(HibernateException he)
+		{
+			manejaExcepcion(he);
+			throw he;
+		}
+		finally{
+			session.close();
+		}
+		return f;
+	}
+
 
 }

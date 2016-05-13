@@ -1,9 +1,12 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Recibo;
 import datos.Recibo;
 
 public class ReciboDao {
@@ -84,5 +87,22 @@ public class ReciboDao {
 		{
 			session.close();
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Recibo> traerRecibos() throws HibernateException
+	{
+		List<Recibo> Recibos=null;
+		try{
+			iniciaOperacion();
+			Recibos= session.createQuery("from Recibo p order by idRecibo asc").list();
+		}catch(HibernateException he)
+		{
+			manejaExcepcion(he);
+			throw he;
+		}finally{
+			session.close();
+		}
+		return Recibos;
 	}
 }
