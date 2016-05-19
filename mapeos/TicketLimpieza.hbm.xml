@@ -11,8 +11,9 @@
 <property column="realizado" name="realizado" type="boolean"></property>
 
  
-<one-to-one class="datos.Login" name="login" />			
-<one-to-one class="datos.TipoLimpieza" name="tipoLimpieza"></one-to-one>
+<many-to-one class="datos.Login" name="login" />	
+
+<one-to-one class="datos.TipoLimpieza" name="tipoLimpieza"></one-to-one>		
 
 </class>
 </hibernate-mapping>

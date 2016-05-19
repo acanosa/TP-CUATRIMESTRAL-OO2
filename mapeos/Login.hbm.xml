@@ -11,10 +11,22 @@
 <property column="clave" name="clave" type="string"></property>
 <property column="privilegio" name="privilegio" type="int"></property>
 
-<one-to-one class="datos.Cliente" name="cliente"></one-to-one>
+ <one-to-one class="datos.Cliente" name="cliente"></one-to-one>
+
+
 <one-to-one class="datos.Usuario" name="datosUsuario"></one-to-one>
-<one-to-one class="datos.TicketMantenimiento" name="ticketMantenimiento"></one-to-one>
-<one-to-one class="datos.TicketLimpieza" name="ticketLimpieza"></one-to-one>
+
+<set  name="ticketLimpieza" table="TicketLimpieza" order-by="idTicketLimpieza asc" inverse="true" lazy="true" fetch="select">
+<key column="idTicketLimpieza" not-null="true"></key>
+<one-to-many class="datos.TicketLimpieza"></one-to-many>
+</set> 
+
+  <set  name="ticketMantenimiento" table="TicketMantenimiento" order-by="idTicketMantenimiento asc" inverse="true" lazy="true" fetch="select">
+<key column="idTicketMantenimiento" not-null="true"></key>
+<one-to-many class="datos.TicketMantenimiento"></one-to-many>
+</set>
+
+
 
 
 </class>

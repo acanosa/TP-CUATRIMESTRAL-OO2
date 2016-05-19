@@ -37,6 +37,7 @@
 	<key column="idFactura" not-null="true"></key>
 	<one-to-many class="datos.Factura"/>
 	</set>
-
+<!-- 
+ -->
 </class>
 </hibernate-mapping>

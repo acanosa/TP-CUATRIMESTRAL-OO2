@@ -17,7 +17,7 @@
 
 
 
- <one-to-one class="datos.Login" name="Login" /> 
+<many-to-one class="datos.Login" name="Login" />
       		
 
 

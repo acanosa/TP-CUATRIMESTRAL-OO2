@@ -16,10 +16,13 @@
 <one-to-many class="datos.ItemFactura" ></one-to-many>
 </set>
 
-<set name="recibo"  cascade="save-update" inverse="true" order-by="idRecibo asc" lazy="true" fetch="select">
+<set name="recibos"  cascade="save-update" inverse="true" order-by="idRecibo asc" lazy="true" fetch="select">
 <key column="idFactura" not-null="true"></key>
 <one-to-many class="datos.Recibo"></one-to-many>
 </set>
+<!--  
+
+-->
 
 </class>
 </hibernate-mapping>

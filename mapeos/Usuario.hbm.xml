@@ -5,21 +5,21 @@
 
 <class name="datos.Usuario" table="Usuario">
 <id column="idUsuario" name="idUsuario">
-<generator class="identity"/>
+<generator class="foreign">
+	<param name="property">login</param>
+</generator>
 </id>
 <property column="nombre" name="nombre" type="string"/>
 <property column="apellido" name="apellido" type="string"/>
 <property column="dni" name="dni" type="int"/>
-<property column="usuario" name="usuario" type="string"/>
-<property column="clave" name="clave" type="string"/>
 <property column="baja" name="baja" type="boolean"/>
 
 
 
 
-<one-to-one class="datos.Login" name="login" /> 
+<one-to-one class="datos.Login" name="login" />
+
 <one-to-one class="datos.TipoUsuario" name="tipoUsuario" />
-      		
 
 
 

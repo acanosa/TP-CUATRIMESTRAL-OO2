@@ -10,9 +10,9 @@
 <property column="capacidadMaxima" name="CapacidadMaxima" type="int"></property>
 <property column="disponible" name="disponible" type="boolean"></property>
 <property column="precioNoche" name="precioNoche" type="float"></property>
-<property column="precioTemporada" name="precioTemporada" type="float"></property>
 
 
-<one-to-one class="datos.TipoHabitacion" name="TipoHabitacion"></one-to-one>
+  <one-to-one class="datos.TipoHabitacion" name="TipoHabitacion"></one-to-one>
+
 </class>
 </hibernate-mapping>
