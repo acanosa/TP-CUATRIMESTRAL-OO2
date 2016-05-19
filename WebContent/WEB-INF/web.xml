@@ -4,14 +4,25 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
 <display-name>TP-Cuatrimestral</display-name>
 <welcome-file-list>
-<welcome-file>index.jsp</welcome-file>
+<welcome-file>inicio.jsp</welcome-file>
 </welcome-file-list>
 <servlet>
-<servlet-name>ControladorIniciarSesion</servlet-name>
-<servlet-class>controladores.ControladorIniciarSesion</servlet-class>
+	<servlet-name>ControladorIniciarSesion</servlet-name>
+	<servlet-class>controladores.ControladorIniciarSesion</servlet-class>
 </servlet>
+
+<servlet>
+	<servlet-name>ControladorRegistrarseCliente</servlet-name>
+	<servlet-class>controladores.ControladorRegistrarseCliente</servlet-class>
+</servlet>
+
 <servlet-mapping>
-<servlet-name>ControladorIniciarSesion</servlet-name>
-<url-pattern>/Inicio.jsp</url-pattern>
+	<servlet-name>ControladorIniciarSesion</servlet-name>
+	<url-pattern>/IniciarSesion</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>ControladorRegistrarseCliente</servlet-name>
+	<url-pattern>/RegistrarCliente</url-pattern>
 </servlet-mapping>
 </web-app>
