@@ -1,6 +1,7 @@
 package negocio;
 
 import dao.UsuarioDao;
+import datos.Login;
 import datos.Usuario;
 
 public class UsuarioABM {
@@ -12,20 +13,14 @@ public class UsuarioABM {
 		return u;
 	}
 	
-	public Usuario traerUsuario(String usuario,String clave){ //validar Login
-		
-		Usuario u=dao.traerUsuario(usuario, clave);
-		return u;	
-	}
-	
 	public Usuario traerUsuario(String usuario){//modificar usuario
 		
 		Usuario u=dao.traerUsuario(usuario);
 		return u;	
 	}
 	
-	public long agregarUsuario(String nombre, String apellido, boolean baja, int dni,String usuario, String clave)throws Exception{
-		Usuario u=new Usuario(nombre, apellido,baja,dni,usuario,clave);
+	public long agregarUsuario(String nombre, String apellido, boolean baja, int dni, Login login)throws Exception{
+		Usuario u=new Usuario(nombre, apellido,baja,dni,login);
 		return dao.agregarUsuario(u);
 	}
 	
@@ -36,13 +31,6 @@ public class UsuarioABM {
 	public void modificarUsuario(Usuario u)throws Exception{
 		if(u==null) throw new Exception ("ERROR: objeto nulo");
 		if(dao.traerUsuario(u.getIdUsuario()) == null) throw new Exception ("ERROR: usuario no registrado");
-		dao.actualizarUsuario(u);
-	}
-	
-	public void modificarNombreUsuario(Usuario u, String usuario) throws Exception
-	{
-		if(dao.traerUsuario(usuario) != null) throw new Exception ("ERROR: este usuario ya existe");
-		u.setUsuario(usuario);
 		dao.actualizarUsuario(u);
 	}
 	
