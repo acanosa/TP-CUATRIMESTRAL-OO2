@@ -5,6 +5,8 @@
 <head>
 		<meta charset="ISO-8859-1">
 		<title>Hotel San Martin</title>
+		<%@page import= "datos.Usuario" %>
+		<% Usuario usuario= new Usuario(); %>
 		<link href="estilo.css" rel="stylesheet"/>
 	</head>
 	<body>
@@ -17,7 +19,7 @@
 		</div>
 		
 		<div class="div-centrado" >
-			<FORM method=POST action="/TP-Cuatrimestral/inicio.jsp">
+			<FORM method=POST action="/TP-Cuatrimestral/IniciarSesion">
 				<div class="div-texto">
 					<label for="barra1"> Usuario: </label>	
 					<INPUT name="usuario" type="text" class="BarraTexto" id="barra1">
@@ -26,22 +28,18 @@
 					<label for="barra2">Password: </label> 	
 					<input name="clave" type="password" class="BarraTexto" id="barra2">
 				</div>
+				<div class="div-centrado">
+					<INPUT type="submit" value="Iniciar Sesion">
 				<br>			 
+				</div>
 			</FORM>
 		</div>
-		
-		<div class="div-centrado">
-			<FORM method= POST action="/TP-Cuatrimestral/inicio.jsp">
-				<INPUT type="submit" value="Iniciar Sesion">
-			</FORM>
-			<h2><% request.getAttribute("estado"); %></h2>
 			<% boolean sesion=false; %>
 			<br>
 			<br>
 			<br>
-			<form method= GET action="/TP-Cuatrimestral/registro.html">
+			<form method= "GET" action="/TP-Cuatrimestral/registroCliente.jsp">
 				<input type="submit" value="Registrarse">
 			</form>
-		</div>
 	</body>
 </html>

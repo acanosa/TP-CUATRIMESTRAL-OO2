@@ -1,55 +1,93 @@
 @CHARSET "ISO-8859-1";
-.div-centrado{
-	text-align: center;
-}
-
-#div1{
-	text-decoration: underline;
-	font-size: 30px;
-}
-
-.div-Izquierda{
-	text-align: left;
+	.div-centrado{
+		text-align: center;
+	}
 	
-}
-
-h1{
-	font-size: small;
-}
-
-#div2{
-	text-decoration: underline;
-	text-decoration: bold;
-	font-size: 18px;
-}
-
-.div-Campos{
-	width: 200px;
+	html, body {
+		height: 100%; /* hacer que la página llene toda la altura */
+	}
 	
-}
-
-.div-texto label{
-	font-size: 20px;
 	
-}
 
-.div-textoIzquierda{
-	width: 15px;
-	height: 15px;
-}
-
-.div-textoMedio{
 	
-}
-.div-textoDerecha{
+	#div1{
+		text-decoration: underline;
+		font-size: 30px;
+	}
 	
-}
+	.div-Izquierda{
+		text-align: left;
+		
+	}
+	
+	h1{
+		font-size: small;
+	}
+	
+	#div2{
+		text-decoration: underline;
+		text-decoration: bold;
+		font-size: 18px;
+	}
+	
+	#divAdmin{
+		text-align: center;
+		text-decoration: underline;
+		font-size: 20px;
+		margin: 15px;
+	}
+	
+	.div-Campos{
+		width: 200px;
+		
+	}
+	
+	.div-texto label{
+		font-size: 20px;
+		
+	}
+	
+	.div-textoIzquierda{
+		width: 15px;
+		height: 15px;
+	}
+	
+	#barra1{
+		value: "usuario";
+	}
+	
+	#barra2{
+		width: 185px;
+	}
+	.radio{
+		margin-left: 0px;
+	    margin-right: 31px;
+	}
+	.radio2{
+		
+	    margin-left: 9px;
+		
+	}
+	.pie{
+		text-align: center;			
+		font-size: 10px;
+		height:50px; 		  /* establece la altura del pie de página */ 
+		
+	}
+	
+	#pieTabla{
+		width: 100%;
+		align:center;
+		
+		
+	}
+	#cuerpoPagina{
+		height: 100%;	
+	}
+	.header {
+	
+		background-color: #06F;
+	
+	}
 
-#barra1{
-	value: "usuario";
-}
-
-#barra2{
-	width: 185px;
-}
 }
