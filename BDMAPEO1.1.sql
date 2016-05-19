@@ -116,7 +116,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TPCuatrimestral`.`TicketConsumo` (
   `idTicketConsumo` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `descrpcion` VARCHAR(45) NOT NULL COMMENT '',
+  `descripcion` VARCHAR(45) NOT NULL COMMENT '',
   `precio` FLOAT NOT NULL COMMENT '',
   `fechaDePago` DATE NOT NULL COMMENT '',
   `idEstadia` INT NOT NULL COMMENT '',
