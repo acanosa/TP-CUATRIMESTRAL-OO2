@@ -7,9 +7,11 @@ import funciones.Funciones;
 public class Recibo {
 	
 	private long idRecibo;
+	
 	private GregorianCalendar fecha;
 	private float importe;
 	private String formaPago;
+	
 	private Factura factura;
 	
 	public Recibo(){}
@@ -21,11 +23,13 @@ public class Recibo {
 		this.formaPago = formaPago;
 	}
 
+	
+
 	public long getIdRecibo() {
 		return idRecibo;
 	}
 
-	public void setIdRecibo(long idRecibo) {
+	protected void setIdRecibo(long idRecibo) {
 		this.idRecibo = idRecibo;
 	}
 

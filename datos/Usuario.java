@@ -5,22 +5,20 @@ public class Usuario {
 	private String nombre;
 	private String apellido;
 	private int dni;
-	private String usuario;
-	private String clave;
+	
 	private boolean baja;
 	private Login login;
 	private TipoUsuario tipoUsuario;
 	
 	public Usuario(){}
 
-	public Usuario(String nombre, String apellido, boolean baja, int dni, String usuario, String clave) {
+	public Usuario(String nombre, String apellido, boolean baja, int dni, Login login) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
 		this.baja=false;
-		this.usuario= usuario;
-		this.clave= clave;
+		this.login=login;
 	}
 
 	public long getIdUsuario() {
@@ -54,23 +52,6 @@ public class Usuario {
 	public void setDni(int dni) {
 		this.dni = dni;
 	}
-	
-	
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public String getClave() {
-		return clave;
-	}
-
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
 
 	public boolean isBaja() {
 		return baja;
@@ -99,8 +80,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "idUsuario=" + idUsuario + ", nombre=" + nombre
-				+ ", apellido=" + apellido + ", dni=" + dni + ", usuario="
-				+ usuario  + "\n";
+				+ ", apellido=" + apellido + ", dni=" + dni +  "\n";
 	}
 	
 	

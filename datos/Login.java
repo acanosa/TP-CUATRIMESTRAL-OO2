@@ -1,5 +1,7 @@
 package datos;
 
+import java.util.Set;
+
 public class Login {
 	private long idLogin;
 	private String usuario;
@@ -8,8 +10,9 @@ public class Login {
 	
 	private Usuario datosUsuario;
 	private Cliente cliente;
-	private TicketLimpieza ticketLimpieza;
-	private TicketMantenimiento ticketMantenimiento;
+	private Set<TicketLimpieza> ticketLimpieza;
+	private Set<TicketMantenimiento> ticketMantenimiento;
+	
 	
 	
 	public Login(){}
@@ -21,11 +24,13 @@ public class Login {
 		this.privilegio = privilegio;
 	}
 
+	
+	
 	public long getIdLogin() {
 		return idLogin;
 	}
 
-	public void setIdLogin(long idLogin) {
+	protected void setIdLogin(long idLogin) {
 		this.idLogin = idLogin;
 	}
 
@@ -69,27 +74,27 @@ public class Login {
 		this.cliente = cliente;
 	}
 
-	public TicketLimpieza getTicketLimpieza() {
+	public Set<TicketLimpieza> getTicketLimpieza() {
 		return ticketLimpieza;
 	}
 
-	public void setTicketLimpieza(TicketLimpieza ticketLimpieza) {
+	public void setTicketLimpieza(Set<TicketLimpieza> ticketLimpieza) {
 		this.ticketLimpieza = ticketLimpieza;
 	}
 
-	public TicketMantenimiento getTicketMantenimiento() {
+	public Set<TicketMantenimiento> getTicketMantenimiento() {
 		return ticketMantenimiento;
 	}
 
-	public void setTicketMantenimiento(TicketMantenimiento ticketMantenimiento) {
+	public void setTicketMantenimiento(Set<TicketMantenimiento> ticketMantenimiento) {
 		this.ticketMantenimiento = ticketMantenimiento;
 	}
 
 	@Override
 	public String toString() {
 		return "idLogin=" + idLogin + ", usuario=" + usuario + ", clave=" + clave + ", privilegio=" + privilegio
-				+ ", datosUsuario=" + datosUsuario + ", cliente=" + cliente + ", ticketLimpieza=" + ticketLimpieza
-				+ ", ticketMantenimiento=" + ticketMantenimiento + "\n";
+				+ ", datosUsuario=" + datosUsuario + "\n";/*", cliente=" + cliente + ", ticketLimpieza=" + ticketLimpieza
+				+ ", ticketMantenimiento=" + ticketMantenimiento + "\n";*/
 	}
 	
 	

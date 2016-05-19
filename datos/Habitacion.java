@@ -7,19 +7,16 @@ public class Habitacion {
 	private int capacidadMaxima;
 	private boolean disponible;
 	private float precioNoche;
-	private float precioTemporada;
 	private Set<Estadia> lstEstadias;
 	private TipoHabitacion tipoHabitacion;
 	
 	public Habitacion(){}
 
-	public Habitacion(int capacidadMaxima, boolean disponible, float precioNoche,
-			float precioTemporada) {
+	public Habitacion(int capacidadMaxima, boolean disponible, float precioNoche) {
 		super();
 		this.capacidadMaxima = capacidadMaxima;
 		this.disponible = disponible;
 		this.precioNoche = precioNoche;
-		this.precioTemporada = precioTemporada;
 	}
 
 	public long getIdHabitacion() {
@@ -62,14 +59,6 @@ public class Habitacion {
 		this.precioNoche = precioNoche;
 	}
 
-	public float getPrecioTemporada() {
-		return precioTemporada;
-	}
-
-	public void setPrecioTemporada(float precioTemporada) {
-		this.precioTemporada = precioTemporada;
-	}
-
 	public Set<Estadia> getLstEstadias() {
 		return lstEstadias;
 	}
@@ -81,8 +70,7 @@ public class Habitacion {
 	@Override
 	public String toString() {
 		return "idHabitacion=" + idHabitacion + ", capacidadMaxima=" + capacidadMaxima + ", disponible="
-				+ disponible + ", precioNoche=" + precioNoche + ", precioTemporada=" + precioTemporada
-				+ ", lstEstadias=" + lstEstadias + ", tipoHabitacion=" + tipoHabitacion + "\n";
+				+ disponible + ", precioNoche=" + precioNoche +  ", lstEstadias=" + lstEstadias + ", tipoHabitacion=" + tipoHabitacion + "\n";
 	}
 	
 	
