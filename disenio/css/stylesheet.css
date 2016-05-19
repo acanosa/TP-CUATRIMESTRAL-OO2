@@ -1,0 +1,96 @@
+
+
+div {
+    border-radius: 30px;
+}
+    
+#encabezado{
+    
+    
+	width: 97.5%;
+	height: 60px;
+    background-color:#778899;
+    position: fixed;
+    z-index: 1;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+#name {
+	float:left;
+	margin-left: 5px;
+	padding-top: 5px;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
+	color: #ffffff;
+}
+
+#email{
+	float:right;
+	margin-right: 5px;
+	padding-top: 5px;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+	color: #ffffff;
+}
+h4 {
+	margin-left: 5px;
+	margin-bottom: 15px;
+	font-family: Arial,sans-serif;
+}
+
+
+
+.derecha p {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: -10px;
+	font-family: Garamond, serif;
+	color: #000000;
+}
+
+
+a:hover {
+	font-weight: bold;
+}
+
+.izquierda{
+  
+    width: 10%;
+	height: 400px;
+	background-color: #6666FF;
+	float: left;
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.derecha{
+    width: 88%;
+	height: 400px;
+	background-color:#99CCFF;
+	float: right;
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+#pie{
+    
+    height: 50px;
+	background-color: #778899;
+	clear:both;
+	position: relative;
+	font-family: Verdana, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+
+}
+#footer p {
+	position: relative;
+	padding-top: 15px;
+}
+
+
+

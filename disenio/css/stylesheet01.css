@@ -1,0 +1,18 @@
+
+
+body{
+	background-color: #A5D3FF;
+}
+
+.boton{
+	border-radius:5px;
+	float:center;
+	width: 100%;
+	height: 40px;
+	background-color:#ffffff;
+	
+}
+
+h2{
+	color:red;
+}
